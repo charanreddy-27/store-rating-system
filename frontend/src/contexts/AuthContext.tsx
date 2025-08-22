@@ -4,7 +4,7 @@ import { authService, User } from '../services/authService';
 interface AuthContextType {
   user: User | null;
   login: (email: string, password: string) => Promise<void>;
-  register: (data: { name: string; email: string; password: string; address: string }) => Promise<void>;
+  register: (data: { name: string; email: string; password: string; address: string; role: 'admin' | 'normal_user' | 'store_owner' }) => Promise<void>;
   logout: () => void;
   isLoading: boolean;
 }
@@ -53,7 +53,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setUser(response.user);
   };
 
-  const register = async (data: { name: string; email: string; password: string; address: string }) => {
+  const register = async (data: { name: string; email: string; password: string; address: string; role: 'admin' | 'normal_user' | 'store_owner' }) => {
     await authService.register(data);
   };
 

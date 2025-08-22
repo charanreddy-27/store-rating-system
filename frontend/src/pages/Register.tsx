@@ -9,6 +9,7 @@ const Register: React.FC = () => {
     password: '',
     confirmPassword: '',
     address: '',
+    role: 'normal_user' as 'admin' | 'normal_user' | 'store_owner',
   });
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -62,6 +63,7 @@ const Register: React.FC = () => {
         email: formData.email,
         password: formData.password,
         address: formData.address,
+        role: formData.role,
       });
       navigate('/login', { 
         state: { message: 'Registration successful! Please login.' }

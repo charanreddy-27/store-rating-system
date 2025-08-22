@@ -19,6 +19,7 @@ export interface RegisterData {
   email: string;
   password: string;
   address: string;
+  role: 'admin' | 'normal_user' | 'store_owner';
 }
 
 export interface AuthResponse {
