@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../contexts/AuthContext';
 import { dashboardService, DashboardStats } from '../services/dashboardService';
 
 const AdminDashboard: React.FC = () => {

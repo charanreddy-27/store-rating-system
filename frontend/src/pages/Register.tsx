@@ -35,7 +35,7 @@ const Register: React.FC = () => {
     if (!/(?=.*[A-Z])/.test(formData.password)) {
       return 'Password must contain at least one uppercase letter';
     }
-    if (!/(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(formData.password)) {
+    if (!/(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])/.test(formData.password)) {
       return 'Password must contain at least one special character';
     }
     if (formData.password !== formData.confirmPassword) {
